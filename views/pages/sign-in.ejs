@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In Pages</title>
+  </head>
+  <body>
+    <button id="btn-discord">Sign In With Discord</button>
+  </body>
+  <script>
+    const discordBtn = document.getElementById("btn-discord");
+    discordBtn.addEventListener("click", () => {
+      window.location.href = "/api/auth/discord";
+    });
+  </script>
+</html>

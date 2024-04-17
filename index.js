@@ -8,10 +8,13 @@ const passport = require("passport");
 require("./src/strategies/passport-discord");
 require("./src/strategies/passport-local");
 const authRoute = require("./src/routes/auth-route");
+const pageRoute = require("./src/routes/pages-route");
 const app = express();
 const PORT = process.env.PORT || 5000;
 
 connectDB();
+
+app.set("view engine", "ejs");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -30,6 +33,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use("/", pageRoute);
 app.use("/api/auth", authRoute);
 
 app.listen(PORT, () => {
