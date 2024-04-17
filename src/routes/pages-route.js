@@ -9,7 +9,12 @@ router.get("/dashboard", (req, res) => {
 });
 
 router.get("/sign-in", (req, res) => {
-  res.render("pages/sign-in");
+  const isAuthenticated = req?.user;
+  if (!isAuthenticated) {
+    res.render("pages/sign-in");
+    return res.redirect("/sign-in");
+  }
+  res.redirect("/dashboard");
 });
 
 module.exports = router;
