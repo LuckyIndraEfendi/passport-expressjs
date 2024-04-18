@@ -6,6 +6,7 @@ const session = require("express-session");
 const connectDB = require("./src/configs/dbConfig");
 const passport = require("passport");
 require("./src/strategies/passport-discord");
+require("./src/strategies/passport-google");
 require("./src/strategies/passport-local");
 const authRoute = require("./src/routes/auth-route");
 const pageRoute = require("./src/routes/pages-route");

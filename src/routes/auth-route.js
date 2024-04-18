@@ -12,6 +12,17 @@ router.get(
   }
 );
 
+// Google Auth
+router.get(
+  "/google",
+  passport.authenticate("google", {
+    scope: ["profile", "email"],
+  })
+);
+router.get("/google/callback", passport.authenticate("google"), (req, res) => {
+  res.sendStatus(200);
+});
+
 // Local Auth
 router.post("/sign-in", passport.authenticate("local"), (request, response) => {
   response.sendStatus(200);
