@@ -7,11 +7,17 @@
   </head>
   <body>
     <button id="btn-discord">Sign In With Discord</button>
+    <button id="btn-google">Sign In With Google</button>
   </body>
   <script>
     const discordBtn = document.getElementById("btn-discord");
+    const googleBtn = document.getElementById("btn-google");
     discordBtn.addEventListener("click", () => {
       window.location.href = "/api/auth/discord";
     });
+    googleBtn.addEventListener("click", () => {
+      window.location.href = "/api/auth/google";
+    });
+
   </script>
 </html>
