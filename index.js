@@ -5,6 +5,7 @@ const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const connectDB = require("./src/configs/dbConfig");
 const passport = require("passport");
+const path = require("path");
 require("./src/strategies/passport-discord");
 require("./src/strategies/passport-google");
 require("./src/strategies/passport-local");
@@ -15,7 +16,9 @@ const PORT = process.env.PORT || 5000;
 
 connectDB();
 
+app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
+app.use(express.static(path.join(__dirname, "dist")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
