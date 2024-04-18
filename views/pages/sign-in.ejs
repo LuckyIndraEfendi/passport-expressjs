@@ -11,10 +11,10 @@
   </body>
   <script>
     const discordBtn = document.getElementById("btn-discord");
-    const googleBtn = document.getElementById("btn-google");
     discordBtn.addEventListener("click", () => {
       window.location.href = "/api/auth/discord";
     });
+    const googleBtn = document.getElementById("btn-google");
     googleBtn.addEventListener("click", () => {
       window.location.href = "/api/auth/google";
     });
