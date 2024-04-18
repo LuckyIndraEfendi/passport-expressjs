@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index.js",
     "start": "node index.js",
-    "watch:css": "npx tailwindcss -i ./css/input.css -o ./dist/output.css --watch" 
+    "watch:css": "postcss css/main.css -o css/output.css --watch"
   },
   "keywords": [],
   "author": "",
@@ -28,8 +28,5 @@
     "passport-google-oauth20": "^2.0.0",
     "passport-local": "^1.0.0",
     "path": "^0.12.7"
-  },
-  "devDependencies": {
-    "tailwindcss": "^3.4.3"
   }
 }
