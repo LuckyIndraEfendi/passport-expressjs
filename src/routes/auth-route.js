@@ -8,7 +8,7 @@ router.get(
   "/discord/redirect",
   passport.authenticate("discord"),
   (req, res) => {
-    res.sendStatus(200);
+    res.redirect("/dashboard");
   }
 );
 
@@ -20,7 +20,7 @@ router.get(
   })
 );
 router.get("/google/callback", passport.authenticate("google"), (req, res) => {
-  res.sendStatus(200);
+  res.redirect("/dashboard");
 });
 
 // Local Auth
