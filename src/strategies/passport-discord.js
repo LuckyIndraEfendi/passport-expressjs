@@ -47,7 +47,7 @@ module.exports = passport.use(
     {
       clientID: process.env.DISCORD_CLIENT_ID,
       clientSecret: process.env.DISCORD_CLIENT_SECRET,
-      callbackURL: "http://localhost:8000/api/auth/discord/redirect",
+      callbackURL: `${process.env.PUBLIC_REDIRECT}/api/auth/discord/redirect`,
       scope: ["identify", "email"],
     },
     DiscordVerifyCallback
